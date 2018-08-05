@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html>
+<head>
+    <title>Punching Bag Game</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style type="text/css">
+
+    </style>  
+
+</head>
+
+<body>
+
+    <div id='vue-app'>
+
+        <!-- My way 
+        <div>
+            <div id="bag" v-show="!ended"></div>
+            <div id="bag-burst" v-show="ended"></div>
+        </div> -->
+
+        <div id="bag" v-bind:class="{burst: ended}"></div>
+
+        <div id="bag-health">
+            <div v-bind:style="{width: health + '%' }"></div>
+        </div>
+
+        <div id="controls" class="text-center">
+            <button v-on:click="punch" v-show="!ended">Punch</button>
+            <button v-on:click="restart">Restart</button>
+        </div>
+
+    </div>
+
+<script src="game.js"></script>
+</body>
+</html>
